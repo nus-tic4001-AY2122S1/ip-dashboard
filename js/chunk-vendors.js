@@ -1538,7 +1538,7 @@ eval("var global = __webpack_require__(/*! ../internals/global */ \"./node_modul
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ \"./node_modules/core-js/internals/is-pure.js\");\nvar store = __webpack_require__(/*! ../internals/shared-store */ \"./node_modules/core-js/internals/shared-store.js\");\n\n(module.exports = function (key, value) {\n  return store[key] || (store[key] = value !== undefined ? value : {});\n})('versions', []).push({\n  version: '3.17.1',\n  mode: IS_PURE ? 'pure' : 'global',\n  copyright: '© 2021 Denis Pushkarev (zloirock.ru)'\n});\n\n\n//# sourceURL=webpack:///./node_modules/core-js/internals/shared.js?");
+eval("var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ \"./node_modules/core-js/internals/is-pure.js\");\nvar store = __webpack_require__(/*! ../internals/shared-store */ \"./node_modules/core-js/internals/shared-store.js\");\n\n(module.exports = function (key, value) {\n  return store[key] || (store[key] = value !== undefined ? value : {});\n})('versions', []).push({\n  version: '3.17.2',\n  mode: IS_PURE ? 'pure' : 'global',\n  copyright: '© 2021 Denis Pushkarev (zloirock.ru)'\n});\n\n\n//# sourceURL=webpack:///./node_modules/core-js/internals/shared.js?");
 
 /***/ }),
 
@@ -1625,9 +1625,9 @@ eval("var global = __webpack_require__(/*! ../internals/global */ \"./node_modul
   !*** ./node_modules/core-js/internals/this-number-value.js ***!
   \*************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("var classof = __webpack_require__(/*! ../internals/classof-raw */ \"./node_modules/core-js/internals/classof-raw.js\");\n\n// `thisNumberValue` abstract operation\n// https://tc39.es/ecma262/#sec-thisnumbervalue\nmodule.exports = function (value) {\n  if (typeof value != 'number' && classof(value) != 'Number') {\n    throw TypeError('Incorrect invocation');\n  }\n  return +value;\n};\n\n\n//# sourceURL=webpack:///./node_modules/core-js/internals/this-number-value.js?");
+eval("var valueOf = 1.0.valueOf;\n\n// `thisNumberValue` abstract operation\n// https://tc39.es/ecma262/#sec-thisnumbervalue\nmodule.exports = function (value) {\n  return valueOf.call(value);\n};\n\n\n//# sourceURL=webpack:///./node_modules/core-js/internals/this-number-value.js?");
 
 /***/ }),
 
